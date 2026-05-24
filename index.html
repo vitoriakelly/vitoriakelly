@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vitória Kelly — Dev Full Stack apaixonada por código e inovação." />
+  <meta name="author" content="Vitória Kelly" />
+  <title>Vitória Kelly · Dev Full Stack</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-emoji">⚡</span>
+      <span class="logo-text">vitoria<span class="accent">.dev</span></span>
+    </a>
+    <nav>
+      <a href="#about">Sobre</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projetos</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          Disponível para novos projetos
+        </span>
+        <h1>
+          Olá, eu sou <span class="gradient-text">Vitória Kelly</span>
+        </h1>
+        <p class="tagline">
+          <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-description">
+          Desenvolvedora <strong>Full Stack</strong> apaixonada por resolver problemas com código —
+          construindo APIs, microsserviços e interfaces modernas com
+          <em>C#, React, Node e Vue</em>.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            Ver projetos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.17a11.04 11.04 0 015.79 0c2.21-1.48 3.18-1.17 3.18-1.17.62 1.59.23 2.76.11 3.05.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value" id="stat-repos">—</span>
+            <span class="stat-label">Repositórios</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-followers">—</span>
+            <span class="stat-label">Seguidores</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">∞</span>
+            <span class="stat-label">Linhas de código</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="avatar-glow"></div>
+        <div class="avatar-card">
+          <div class="avatar-frame">
+            <img src="https://avatars.githubusercontent.com/u/112122558?v=4" alt="Avatar de Vitória Kelly" />
+            <div class="avatar-badge">⚡</div>
+          </div>
+          <div class="avatar-info">
+            <code class="terminal">
+              <span class="prompt">~/vitoria</span> <span class="cmd">$ whoami</span><br>
+              <span class="output">→ Full Stack Dev</span><br>
+              <span class="prompt">~/vitoria</span> <span class="cmd">$ ls skills/</span><br>
+              <span class="output">backend.cs  frontend.tsx  apis.js</span>
+            </code>
+          </div>
+        </div>
+        <div class="floating floating-1">⚡</div>
+        <div class="floating floating-2">&lt;/&gt;</div>
+        <div class="floating floating-3">{ }</div>
+        <div class="floating floating-4">🚀</div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-header">
+        <span class="section-tag">// sobre</span>
+        <h2>Inovação <span class="gradient-text">+</span> Tecnologia</h2>
+      </div>
+      <div class="about-grid about-grid-2">
+        <article class="about-card">
+          <div class="about-icon">💡</div>
+          <h3>Inovação</h3>
+          <p>Estou sempre explorando novas tecnologias, padrões de arquitetura e formas criativas de transformar problemas complexos em soluções elegantes.</p>
+        </article>
+        <article class="about-card highlight">
+          <div class="about-icon">💻</div>
+          <h3>Tecnologia</h3>
+          <p>Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js, até interfaces ricas com React e Vue. Escrever código bem feito é o que me move.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="section-header">
+        <span class="section-tag">// stack</span>
+        <h2>Tecnologias que uso no <span class="gradient-text">dia a dia</span></h2>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-item" data-tech="C#"><span>C#</span></div>
+        <div class="stack-item" data-tech=".NET"><span>.NET</span></div>
+        <div class="stack-item" data-tech="React"><span>React</span></div>
+        <div class="stack-item" data-tech="Vue"><span>Vue</span></div>
+        <div class="stack-item" data-tech="Node.js"><span>Node.js</span></div>
+        <div class="stack-item" data-tech="NestJS"><span>NestJS</span></div>
+        <div class="stack-item" data-tech="Next.js"><span>Next.js</span></div>
+        <div class="stack-item" data-tech="Swift"><span>Swift</span></div>
+        <div class="stack-item" data-tech="JavaScript"><span>JavaScript</span></div>
+        <div class="stack-item" data-tech="TypeScript"><span>TypeScript</span></div>
+        <div class="stack-item" data-tech="APIs"><span>APIs REST</span></div>
+        <div class="stack-item" data-tech="Microservices"><span>Microsserviços</span></div>
+        <div class="stack-item" data-tech="Python"><span>Python</span></div>
+        <div class="stack-item" data-tech="Git"><span>Git</span></div>
+        <div class="stack-item" data-tech="SQL"><span>SQL</span></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <span class="section-tag">// projetos</span>
+        <h2>Trabalhos em <span class="gradient-text">destaque</span></h2>
+        <p class="section-subtitle">Projetos puxados diretamente do meu GitHub em tempo real.</p>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+      </div>
+      <div class="see-more">
+        <a href="https://github.com/vitoriakelly?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">
+          Ver todos os repositórios
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-card">
+        <div class="contact-emoji">👩‍💻</div>
+        <h2>Vamos construir algo <span class="gradient-text">juntos</span>?</h2>
+        <p>Tem um projeto, ideia ou só quer trocar uma ideia sobre código? Me chama!</p>
+        <div class="contact-links">
+          <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.17a11.04 11.04 0 015.79 0c2.21-1.48 3.18-1.17 3.18-1.17.62 1.59.23 2.76.11 3.05.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a href="https://github.com/vitoriakelly?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">
+            Repositórios
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Feito com <span class="heart">♥</span> e muito café ☕ por <strong>Vitória Kelly</strong></p>
+    <p class="footer-sub">© <span id="year"></span> · Inovação e tecnologia.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
