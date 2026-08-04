@@ -217,6 +217,9 @@ function initBackgroundCanvas() {
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const lightness = isLight ? 42 : 70;
+    const alpha = isLight ? 0.45 : 0.7;
 
     particles.forEach((p, i) => {
       p.x += p.vx;
@@ -227,7 +230,7 @@ function initBackgroundCanvas() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, 0.7)`;
+      ctx.fillStyle = `hsla(${p.hue}, 80%, ${lightness}%, ${alpha})`;
       ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
@@ -239,7 +242,7 @@ function initBackgroundCanvas() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `hsla(${p.hue}, 80%, 60%, ${0.18 * (1 - dist / 130)})`;
+          ctx.strokeStyle = `hsla(${p.hue}, 70%, ${lightness}%, ${0.14 * (1 - dist / 130)})`;
           ctx.lineWidth = 0.6;
           ctx.stroke();
         }
@@ -283,6 +286,57 @@ function initReveal() {
     });
   });
   mo.observe(document.body, { childList: true, subtree: true });
+}
+
+/* --------------------------- Theme toggle ------------------------------- */
+
+function getPreferredTheme() {
+  try {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch (_) {}
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+  const next = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  document.documentElement.style.colorScheme = next;
+
+  try {
+    localStorage.setItem('theme', next);
+  } catch (_) {}
+
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    toggle.setAttribute(
+      'aria-label',
+      next === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'
+    );
+  }
+
+  window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
+}
+
+function initThemeToggle() {
+  applyTheme(getPreferredTheme());
+
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    try {
+      if (localStorage.getItem('theme')) return;
+    } catch (_) {}
+    applyTheme(e.matches ? 'dark' : 'light');
+  });
 }
 
 /* --------------------------- Mobile menu -------------------------------- */
@@ -336,5 +390,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadGitHubData();
   initBackgroundCanvas();
   initReveal();
+  initThemeToggle();
   initMobileMenu();
 });
