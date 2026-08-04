@@ -285,6 +285,48 @@ function initReveal() {
   mo.observe(document.body, { childList: true, subtree: true });
 }
 
+/* --------------------------- Mobile menu -------------------------------- */
+
+function initMobileMenu() {
+  const toggle = $('#menu-toggle');
+  const nav = $('#primary-nav');
+  const overlay = $('#nav-overlay');
+
+  if (!toggle || !nav || !overlay) return;
+
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    nav.classList.toggle('is-open', open);
+    overlay.classList.toggle('is-visible', open);
+    overlay.hidden = !open;
+    document.body.classList.toggle('menu-open', open);
+  }
+
+  function close() {
+    setOpen(false);
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    setOpen(!isOpen);
+  });
+
+  overlay.addEventListener('click', close);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', close);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 968) close();
+  });
+}
+
 /* ------------------------------- Init ----------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -294,4 +336,5 @@ document.addEventListener('DOMContentLoaded', () => {
   loadGitHubData();
   initBackgroundCanvas();
   initReveal();
+  initMobileMenu();
 });

@@ -123,12 +123,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background-clip: text;
 }
 
-.navbar nav {
+.nav {
   display: flex;
   gap: 2rem;
 }
 
-.navbar nav a {
+.nav a {
   font-size: 0.92rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -136,11 +136,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color 0.2s;
 }
 
-.navbar nav a:hover {
+.nav a:hover {
   color: var(--text);
 }
 
-.navbar nav a::after {
+.nav a::after {
   content: '';
   position: absolute;
   bottom: -6px;
@@ -152,7 +152,53 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: width 0.3s;
 }
 
-.navbar nav a:hover::after { width: 100%; }
+.nav a:hover::after { width: 100%; }
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  z-index: 110;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.menu-toggle:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-overlay {
+  display: none;
+}
 
 /* ==========================================================================
    GENERAL LAYOUT
@@ -836,9 +882,69 @@ main {
   .badge { margin-left: auto; margin-right: auto; }
   .about-grid { grid-template-columns: 1fr; }
   .navbar { padding: 1rem 1.5rem; }
-  .navbar nav { display: none; }
   main { padding: 0 1.5rem; }
   .footer { padding: 2rem 1.5rem; }
+
+  .menu-toggle { display: flex; }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(300px, 82vw);
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 5.5rem 1.75rem 2rem;
+    flex-direction: column;
+    gap: 0.35rem;
+    background: rgba(14, 8, 28, 0.96);
+    border-left: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.45);
+    transform: translateX(105%);
+    transition: transform 0.3s ease;
+    z-index: 105;
+  }
+
+  .nav.is-open {
+    transform: translateX(0);
+  }
+
+  .nav a {
+    font-size: 1.15rem;
+    padding: 0.95rem 0.85rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav a::after { display: none; }
+
+  .nav a:hover,
+  .nav a:focus-visible {
+    color: var(--text);
+    background: var(--surface-hover);
+  }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 2, 12, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 104;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 600px) {
