@@ -956,6 +956,27 @@ main {
   flex-wrap: wrap;
 }
 
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0 !important;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.contact-details a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.contact-details a:hover {
+  color: var(--text);
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
