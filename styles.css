@@ -162,7 +162,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1.25rem 3rem;
   z-index: 220;
   backdrop-filter: blur(14px);
@@ -178,6 +178,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -0.02em;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .logo-emoji {
@@ -200,14 +203,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nav {
   display: flex;
-  gap: 2rem;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 74px;
   align-items: center;
-  z-index: 101;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
 }
 
 .nav a {
@@ -216,7 +215,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 500;
   position: relative;
   transition: color 0.2s;
-  pointer-events: auto;
 }
 
 .nav a:hover {
@@ -282,8 +280,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
   position: relative;
-  z-index: 221;
+  z-index: 2;
 }
 
 .theme-toggle {
@@ -1048,6 +1047,7 @@ main {
   .menu-toggle { display: flex; }
 
   .nav {
+    position: fixed;
     top: 0;
     right: 0;
     left: auto;
@@ -1056,8 +1056,10 @@ main {
     height: 100dvh;
     margin: 0;
     padding: 5.5rem 1.75rem 2rem;
+    flex: none;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     gap: 0.35rem;
     background: var(--nav-panel-bg);
     border-left: 1px solid var(--border);
@@ -1065,7 +1067,7 @@ main {
     box-shadow: -20px 0 50px rgba(0, 0, 0, 0.45);
     transform: translateX(105%);
     transition: transform 0.3s ease;
-    z-index: 210;
+    z-index: 1;
     pointer-events: auto;
   }
 
