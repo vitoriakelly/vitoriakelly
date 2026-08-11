@@ -1,111 +1,99 @@
-# ⚡ vitoria.dev — Landing Page
+<div align="center">
 
-Landing page pessoal da **Vitória Kelly**, Dev Full Stack apaixonada por código e inovação.
+# Olá! Eu sou a Vitória Kelly 👋
 
-> Inovação · Tecnologia
+### Dev Full Stack · Inovação · Tecnologia
 
-## ✨ Destaques
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitoria-leopoldo/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vitoriakelly)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vitoria3kelly7@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5521995374565)
+[![Portfolio](https://img.shields.io/badge/Portfolio-b14bff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://vitoriakelly.github.io/profile/)
 
-- **Design moderno** com tema cyberpunk (dark + roxo/rosa/ciano)
-- **Animações suaves** — partículas no background, efeito de digitação, glow no avatar, reveal on scroll
-- **Integração com GitHub API** — projetos, contagem de repositórios e seguidores carregados em tempo real
-- **100% responsivo** — bonito no celular, tablet e desktop
-- **Acessível e semântico** — HTML5 semântico, contraste adequado, navegação por teclado
+</div>
 
-## 📁 Estrutura
+---
 
-```
-vitoria/
-├── index.html      # Estrutura da página
-├── styles.css      # Estilos (tema dark + glassmorphism + gradientes)
-├── script.js       # Animações e GitHub API
-└── README.md       # Este arquivo
-```
+## 👩‍💻 Sobre mim
 
-## 🚀 Como rodar
+Apaixonada por **resolver problemas com código**. Atuo no full stack construindo APIs, microsserviços e interfaces modernas — do backend em **.NET / Node** ao frontend com **React, Vue e Next.js**.
 
-A página é estática, sem build. Você pode abrir o arquivo `index.html` direto no navegador, ou usar um servidor local para evitar problemas de CORS:
+- 🔭 Sempre explorando novas tecnologias e arquiteturas
+- 💡 Gosto de transformar problemas complexos em soluções elegantes
+- 🌱 Evoluindo continuamente em microsserviços, APIs e aplicações modernas
+- ⚡ Disponível para novos projetos e oportunidades
 
-```bash
-# opção 1 — Python
-python3 -m http.server 8000
+---
 
-# opção 2 — Node
-npx serve .
+## 🛠️ Tecnologias
 
-# opção 3 — VS Code
-# Use a extensão "Live Server" e clique em "Go Live"
-```
+### Backend
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![APIs REST](https://img.shields.io/badge/APIs%20REST-009688?style=flat-square&logo=openapiinitiative&logoColor=white)
+![Microsserviços](https://img.shields.io/badge/Microsserviços-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-Depois acesse `http://localhost:8000`.
+### Frontend
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 
-## 🌐 Como hospedar de graça
+### Mobile & ferramentas
+![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
-### GitHub Pages (recomendado)
+---
 
-1. Crie um repositório no seu GitHub chamado `vitoriakelly.github.io`
-2. Faça push desses arquivos para a branch `main`
-3. Vá em **Settings → Pages** e escolha a branch `main` como source
-4. Pronto! Sua página estará no ar em `https://vitoriakelly.github.io`
+## 📊 GitHub Stats
 
-```bash
-git init
-git add .
-git commit -m "feat: landing page pessoal"
-git branch -M main
-git remote add origin https://github.com/vitoriakelly/vitoriakelly.github.io.git
-git push -u origin main
-```
+<div align="center">
 
-### Outras opções
+<a href="https://github.com/vitoriakelly">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=vitoriakelly&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="GitHub stats de Vitória Kelly" />
+</a>
+<a href="https://github.com/vitoriakelly">
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vitoriakelly&layout=compact&theme=radical&hide_border=true" alt="Linguagens mais usadas" />
+</a>
 
-- **Vercel** — `npx vercel` e segue o passo a passo
-- **Netlify** — arrasta a pasta no [app.netlify.com/drop](https://app.netlify.com/drop)
+</div>
 
-## 🛠️ Customização
+---
 
-### Trocar usuário do GitHub
+## 🚀 Destaques
 
-Edite o topo de `script.js`:
+| Projeto | Descrição | Tech |
+| --- | --- | --- |
+| [films](https://github.com/vitoriakelly/films) | Filmes e séries | JavaScript |
+| [ConstruCra](https://github.com/vitoriakelly/ConstruCra) | Sistema de gestão de projetos de engenharia | Python |
+| [API-controle-de-gastos](https://github.com/vitoriakelly/API-controle-de-gastos) | API de controle financeiro | C# |
+| [quick-list](https://github.com/vitoriakelly/quick-list) | Lista de compras (mobile) | Swift |
 
-```js
-const GITHUB_USER = 'vitoriakelly'; // troque aqui
-```
+> 🌐 Veja o portfólio completo: **[vitoriakelly.github.io/profile](https://vitoriakelly.github.io/profile/)**
 
-### Trocar cores
+---
 
-Edite as variáveis CSS no topo de `styles.css`:
+## 📬 Contato
 
-```css
-:root {
-  --primary: #b14bff;
-  --primary-2: #ff5cb4;
-  --accent: #00e7ff;
-  /* ... */
-}
-```
+Quer trocar uma ideia, falar sobre um projeto ou oportunidade? Me chama!
 
-### Trocar textos do efeito de digitação
+- 💼 [LinkedIn](https://www.linkedin.com/in/vitoria-leopoldo/)
+- 📧 [vitoria3kelly7@gmail.com](mailto:vitoria3kelly7@gmail.com)
+- 💬 [WhatsApp](https://wa.me/5521995374565)
+- 🐱 [GitHub](https://github.com/vitoriakelly)
+- 📄 [Baixar CV](./assets/cv-vitoria-kelly.pdf)
 
-Edite o array `typedTexts` em `script.js`:
+---
 
-```js
-const typedTexts = [
-  'Dev Full Stack 👩‍💻',
-  'C# • React • Node • Vue',
-  // adicione mais
-];
-```
+<div align="center">
 
-## 🧰 Stack utilizada
+**Inovação · Tecnologia · Código com propósito**
 
-- HTML5 semântico
-- CSS3 moderno (custom properties, grid, flexbox, backdrop-filter)
-- JavaScript vanilla (sem frameworks!)
-- Canvas 2D para o efeito de partículas
-- [GitHub REST API](https://docs.github.com/en/rest)
-- Fontes: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+⭐ Se curtiu algum projeto, deixa uma star — ajuda bastante!
 
-## 📄 Licença
-
-Feito com 💜 e muito café. Use, fork e personalize à vontade.
+</div>
