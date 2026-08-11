@@ -54,12 +54,14 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 
 <div align="center">
 
-<a href="https://github.com/vitoriakelly">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=vitoriakelly&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="GitHub stats de Vitória Kelly" />
-</a>
-<a href="https://github.com/vitoriakelly">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vitoriakelly&layout=compact&theme=radical&hide_border=true" alt="Linguagens mais usadas" />
-</a>
+[![GitHub Streak](https://streak-stats.demolab.com?user=vitoriakelly&theme=radical&hide_border=true&locale=pt_BR)](https://github.com/vitoriakelly)
+
+<br/>
+
+![Followers](https://img.shields.io/github/followers/vitoriakelly?style=for-the-badge&logo=github&label=Followers&color=b14bff)
+![Repos](https://img.shields.io/github/repos/vitoriakelly?style=for-the-badge&logo=github&label=Repos&color=ff5cb4)
+![Stars](https://img.shields.io/github/stars/vitoriakelly?style=for-the-badge&logo=github&label=Stars&color=00e7ff)
+![Profile views](https://komarev.com/ghpvc/?username=vitoriakelly&label=Profile%20views&color=8b5cf6&style=for-the-badge)
 
 </div>
 
