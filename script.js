@@ -214,7 +214,7 @@ function initBackgroundCanvas() {
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
       size: Math.random() * 1.8 + 0.5,
-      hue: Math.random() * 60 + 270,
+      hue: Math.random() * 40 + 320, // pinks / magentas
     }));
   }
 
