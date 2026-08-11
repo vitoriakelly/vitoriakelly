@@ -16,13 +16,16 @@ const LANGUAGE_COLORS = {
   Python: '#3572A5',
   HTML: '#e34c26',
   CSS: '#563d7c',
+  SCSS: '#c6538c',
   Vue: '#41b883',
   Swift: '#FA7343',
   Java: '#b07219',
+  Dart: '#00B4AB',
   Go: '#00ADD8',
   Ruby: '#701516',
   PHP: '#4F5D95',
   Rust: '#dea584',
+  'C++': '#f34b7d',
 };
 
 function formatDate(iso) {
