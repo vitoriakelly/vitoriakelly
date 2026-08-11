@@ -7,7 +7,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitoria-leopoldo/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vitoriakelly)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vitoria3kelly7@gmail.com)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5521995374565)
 [![Portfolio](https://img.shields.io/badge/Portfolio-b14bff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://vitoriakelly.github.io/profile/)
 
 </div>
@@ -86,7 +85,6 @@ Quer trocar uma ideia, falar sobre um projeto ou oportunidade? Me chama!
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/vitoria-leopoldo/)
 - 📧 [vitoria3kelly7@gmail.com](mailto:vitoria3kelly7@gmail.com)
-- 💬 [WhatsApp](https://wa.me/5521995374565)
 - 🐱 [GitHub](https://github.com/vitoriakelly)
 - 📄 [Baixar CV](./assets/cv-vitoria-kelly.pdf)
 
