@@ -7,7 +7,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitoria-leopoldo/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vitoriakelly)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vitoria3kelly7@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-b14bff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://vitoriakelly.github.io/profile/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vitoriakelly.vercel.app/)
 
 </div>
 
@@ -75,14 +75,72 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 
 ## 🚀 Destaques
 
-| Projeto | Descrição | Tech |
-| --- | --- | --- |
-| [films](https://github.com/vitoriakelly/films) | Filmes e séries | JavaScript |
-| [ConstruCra](https://github.com/vitoriakelly/ConstruCra) | Sistema de gestão de projetos de engenharia | Python |
-| [API-controle-de-gastos](https://github.com/vitoriakelly/API-controle-de-gastos) | API de controle financeiro | C# |
-| [quick-list](https://github.com/vitoriakelly/quick-list) | Lista de compras (mobile) | Swift |
+Projetos que mais representam meu trabalho — full stack, mobile e APIs.
 
-> 🌐 Veja o portfólio completo: **[vitoriakelly.github.io/profile](https://vitoriakelly.github.io/profile/)**
+<br/>
+
+### 📱 Phone Store
+> Gestão de dispositivos: controle os aparelhos da sua loja.
+
+<table>
+  <tr>
+    <td width="50%">
+      <h4><a href="https://github.com/vitoriakelly/phone-store">phone-store</a></h4>
+      Frontend da loja — interface moderna para gerenciar dispositivos.<br/><br/>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+      <img src="https://img.shields.io/badge/SCSS-CC6699?style=flat-square&logo=sass&logoColor=white" alt="SCSS"/>
+      <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML"/>
+      <br/><br/>
+      <a href="https://github.com/vitoriakelly/phone-store">🔗 Ver repositório →</a>
+    </td>
+    <td width="50%">
+      <h4><a href="https://github.com/vitoriakelly/phone-store-api">phone-store-api</a></h4>
+      Backend da loja — API para o controle de aparelhos e operações da store.<br/><br/>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+      <img src="https://img.shields.io/badge/API-009688?style=flat-square&logo=openapiinitiative&logoColor=white" alt="API"/>
+      <br/><br/>
+      <a href="https://github.com/vitoriakelly/phone-store-api">🔗 Ver repositório →</a>
+    </td>
+  </tr>
+</table>
+
+### 🎬 Outros projetos
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>🍿 <a href="https://github.com/vitoriakelly/films">films</a></h4>
+      Catálogo de filmes e séries.<br/><br/>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🏗️ <a href="https://github.com/vitoriakelly/ConstruCra">ConstruCra</a></h4>
+      Sistema de gestão de projetos de engenharia.<br/><br/>
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>💰 <a href="https://github.com/vitoriakelly/API-controle-de-gastos">API-controle-de-gastos</a></h4>
+      API de controle financeiro em .NET.<br/><br/>
+      <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white" alt="C#"/>
+      <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET"/>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🛒 <a href="https://github.com/vitoriakelly/quick-list">quick-list</a></h4>
+      Lista de compras mobile.<br/><br/>
+      <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift"/>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<div align="center">
+
+🌐 **Portfólio completo:** [vitoriakelly.vercel.app](https://vitoriakelly.vercel.app/)
+
+</div>
 
 ---
 
