@@ -60,14 +60,14 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=vitoriakelly&theme=radical&hide_border=true&locale=pt_BR)](https://github.com/vitoriakelly)
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vitoriakelly&bg_color=050505&color=ff4da6&line=ff2d87&point=ff8ac4&area=true&hide_border=true&area_color=ff2d87)](https://github.com/vitoriakelly)
 
 <br/>
 
-![Followers](https://img.shields.io/github/followers/vitoriakelly?style=for-the-badge&logo=github&label=Followers&color=b14bff)
-![Repos](https://img.shields.io/github/repos/vitoriakelly?style=for-the-badge&logo=github&label=Repos&color=ff5cb4)
-![Stars](https://img.shields.io/github/stars/vitoriakelly?style=for-the-badge&logo=github&label=Stars&color=00e7ff)
-![Profile views](https://komarev.com/ghpvc/?username=vitoriakelly&label=Profile%20views&color=8b5cf6&style=for-the-badge)
+![Followers](https://img.shields.io/github/followers/vitoriakelly?style=for-the-badge&logo=github&logoColor=white&label=Followers&color=ff4da6)
+![Repos](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fvitoriakelly&query=%24.public_repos&style=for-the-badge&logo=github&logoColor=white&label=Repos&color=ff2d87&labelColor=050505)
+![Stars](https://img.shields.io/github/stars/vitoriakelly?aggregate&style=for-the-badge&logo=github&logoColor=white&label=Stars&color=ff8ac4)
+![Profile views](https://komarev.com/ghpvc/?username=vitoriakelly&label=Profile%20views&color=ff4da6&style=for-the-badge&labelColor=050505)
 
 </div>
 
