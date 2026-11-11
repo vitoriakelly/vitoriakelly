@@ -1,10 +1,8 @@
 /* ==========================================================================
-   VITORIA.DEV — Landing Page
+   VITORIA.DEV — Editorial portfolio
    ========================================================================== */
 
 const GITHUB_USER = 'vitoriakelly';
-
-/* ----------------------------- Util ------------------------------------- */
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -28,67 +26,212 @@ const LANGUAGE_COLORS = {
   'C++': '#f34b7d',
 };
 
-function formatDate(iso) {
-  const d = new Date(iso);
-  return d.toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
+let currentLang = 'pt';
+let cachedRepos = null;
+
+/* ------------------------------ i18n ------------------------------------ */
+
+const I18N = {
+  pt: {
+    'meta.title': 'Vitória Kelly · Dev Full Stack',
+    'meta.description':
+      'Vitória Kelly — Dev Full Stack com foco em APIs, microsserviços e aplicações web de ponta a ponta.',
+    'nav.aria': 'Navegação principal',
+    'nav.projects': 'projetos',
+    'nav.about': 'sobre',
+    'nav.contact': 'contato',
+    'nav.open': 'Abrir menu',
+    'nav.close': 'Fechar menu',
+    'theme.toggle': 'Alternar tema',
+    'theme.light': 'Ativar tema claro',
+    'theme.dark': 'Ativar tema escuro',
+    'lang.switch': 'Switch to English',
+    'lang.label': 'EN',
+    'hero.kicker': 'Vitória Kelly · Dev Full Stack',
+    'hero.title': 'desenvolvimento',
+    'hero.description':
+      'Desenvolvedora com foco em frontend, experiência em interfaces modernas e aplicações web de ponta a ponta — com React, Vue, Next.js, .NET e Node.',
+    'hero.cta': 'conheça meus projetos',
+    'about.label': 'sobre',
+    'about.title': 'Inovação e tecnologia',
+    'about.titleAccent': 'com propósito',
+    'about.p1':
+      'Estou sempre explorando novas tecnologias, padrões de arquitetura e formas criativas de transformar problemas complexos em soluções elegantes.',
+    'about.p2':
+      'Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js e NestJS, até interfaces ricas com React, Vue e Next.js. Escrever código bem feito é o que me move.',
+    'about.cv': 'baixar CV',
+    'stack.label': 'stack',
+    'stack.title': 'Tecnologias do',
+    'stack.titleAccent': 'dia a dia',
+    'projects.label': 'projetos',
+    'projects.title': 'Trabalhos em',
+    'projects.titleAccent': 'destaque',
+    'projects.subtitle': 'Seleção puxada do meu GitHub em tempo real.',
+    'projects.seeMore': 'ver todos os repositórios',
+    'projects.fallback': 'Projeto em desenvolvimento',
+    'projects.error': 'Não foi possível carregar os repositórios agora.',
+    'projects.viewGithub': 'Ver no GitHub',
+    'contact.label': 'contato',
+    'contact.title': 'Vamos construir algo',
+    'contact.titleAccent': 'juntos',
+    'contact.titleEnd': '?',
+    'contact.subtitle': 'Tem um projeto, ideia ou oportunidade? Me chama.',
+    'contact.cv': 'Baixar CV',
+    'contact.email': 'E-mail',
+    'footer.tagline': 'Inovação · Tecnologia · Código com propósito',
+  },
+  en: {
+    'meta.title': 'Vitória Kelly · Full Stack Dev',
+    'meta.description':
+      'Vitória Kelly — Full Stack developer focused on APIs, microservices, and end-to-end web applications.',
+    'nav.aria': 'Main navigation',
+    'nav.projects': 'projects',
+    'nav.about': 'about',
+    'nav.contact': 'contact',
+    'nav.open': 'Open menu',
+    'nav.close': 'Close menu',
+    'theme.toggle': 'Toggle theme',
+    'theme.light': 'Switch to light theme',
+    'theme.dark': 'Switch to dark theme',
+    'lang.switch': 'Mudar para português',
+    'lang.label': 'PT',
+    'hero.kicker': 'Vitória Kelly · Full Stack Dev',
+    'hero.title': 'development',
+    'hero.description':
+      'Developer focused on frontend, with experience in modern interfaces and end-to-end web applications — with React, Vue, Next.js, .NET, and Node.',
+    'hero.cta': 'see my projects',
+    'about.label': 'about',
+    'about.title': 'Innovation and technology',
+    'about.titleAccent': 'with purpose',
+    'about.p1':
+      'I am always exploring new technologies, architecture patterns, and creative ways to turn complex problems into elegant solutions.',
+    'about.p2':
+      'I work across the full stack — from .NET APIs and microservices, through Node.js and NestJS, to rich interfaces with React, Vue, and Next.js. Writing well-crafted code is what drives me.',
+    'about.cv': 'download CV',
+    'stack.label': 'stack',
+    'stack.title': 'Everyday',
+    'stack.titleAccent': 'technologies',
+    'projects.label': 'projects',
+    'projects.title': 'Featured',
+    'projects.titleAccent': 'work',
+    'projects.subtitle': 'A live selection pulled from my GitHub.',
+    'projects.seeMore': 'see all repositories',
+    'projects.fallback': 'Project in progress',
+    'projects.error': 'Could not load repositories right now.',
+    'projects.viewGithub': 'View on GitHub',
+    'contact.label': 'contact',
+    'contact.title': "Let's build something",
+    'contact.titleAccent': 'together',
+    'contact.titleEnd': '?',
+    'contact.subtitle': 'Got a project, idea, or opportunity? Reach out.',
+    'contact.cv': 'Download CV',
+    'contact.email': 'Email',
+    'footer.tagline': 'Innovation · Technology · Code with purpose',
+  },
+};
+
+function t(key) {
+  return I18N[currentLang]?.[key] ?? I18N.pt[key] ?? key;
 }
 
-/* ---------------------------- Typed effect ------------------------------ */
+function formatDate(iso) {
+  const locale = currentLang === 'en' ? 'en-US' : 'pt-BR';
+  return new Date(iso).toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+}
 
-const typedTexts = [
-  'Dev Full Stack 👩‍💻',
-  'C# • React • Node • Vue',
-  'APIs & Microsserviços ⚡',
-  'Apaixonada por código 💜',
-];
+function escapeHTML(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
 
-function startTyping() {
-  const el = $('#typed');
-  if (!el) return;
+function applyTranslations() {
+  $$('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    const value = t(key);
+    if (!value) return;
 
-  let textIdx = 0;
-  let charIdx = 0;
-  let deleting = false;
-
-  function tick() {
-    const currentText = typedTexts[textIdx];
-
-    if (!deleting) {
-      el.textContent = currentText.slice(0, charIdx + 1);
-      charIdx++;
-      if (charIdx === currentText.length) {
-        deleting = true;
-        return setTimeout(tick, 2200);
-      }
+    if (el.tagName === 'TITLE') {
+      document.title = value;
+    } else if (el.tagName === 'META') {
+      el.setAttribute('content', value);
     } else {
-      el.textContent = currentText.slice(0, charIdx - 1);
-      charIdx--;
-      if (charIdx === 0) {
-        deleting = false;
-        textIdx = (textIdx + 1) % typedTexts.length;
-      }
+      el.textContent = value;
     }
+  });
 
-    setTimeout(tick, deleting ? 35 : 75);
+  $$('[data-i18n-aria]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-aria');
+    const value = t(key);
+    if (value) el.setAttribute('aria-label', value);
+  });
+
+  const langBtn = $('#lang-toggle');
+  const langLabel = $('#lang-toggle-label');
+  if (langBtn) langBtn.setAttribute('aria-label', t('lang.switch'));
+  if (langLabel) langLabel.textContent = t('lang.label');
+
+  const theme = document.documentElement.getAttribute('data-theme') || 'light';
+  const themeToggle = $('#theme-toggle');
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      'aria-label',
+      theme === 'dark' ? t('theme.light') : t('theme.dark')
+    );
   }
 
-  tick();
+  const menuToggle = $('#menu-toggle');
+  if (menuToggle) {
+    const open = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-label', open ? t('nav.close') : t('nav.open'));
+  }
+
+  if (cachedRepos) renderProjects(cachedRepos);
+}
+
+function getPreferredLang() {
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'pt' || saved === 'en') return saved;
+  } catch (_) {}
+
+  const browser = (navigator.language || 'pt').toLowerCase();
+  return browser.startsWith('en') ? 'en' : 'pt';
+}
+
+function applyLang(lang) {
+  currentLang = lang === 'en' ? 'en' : 'pt';
+  document.documentElement.setAttribute('data-lang', currentLang);
+  document.documentElement.lang = currentLang === 'en' ? 'en' : 'pt-BR';
+
+  try {
+    localStorage.setItem('lang', currentLang);
+  } catch (_) {}
+
+  applyTranslations();
+}
+
+function initLanguageToggle() {
+  applyLang(getPreferredLang());
+
+  const toggle = $('#lang-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    applyLang(currentLang === 'pt' ? 'en' : 'pt');
+  });
 }
 
 /* ---------------------------- GitHub data ------------------------------- */
 
 async function loadGitHubData() {
   try {
-    const userRes = await fetch(`https://api.github.com/users/${GITHUB_USER}`);
-    const user = await userRes.json();
-
-    if (user.public_repos !== undefined) {
-      animateCount('#stat-repos', user.public_repos);
-    }
-    if (user.followers !== undefined) {
-      animateCount('#stat-followers', user.followers);
-    }
-
     const reposRes = await fetch(
       `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=20`
     );
@@ -100,32 +243,20 @@ async function loadGitHubData() {
           .slice(0, 6)
       : [];
 
-    const finalRepos = filtered.length >= 6
-      ? filtered
-      : (Array.isArray(repos)
+    const finalRepos =
+      filtered.length >= 4
+        ? filtered
+        : Array.isArray(repos)
           ? repos.filter((r) => !r.fork).slice(0, 6)
-          : []);
+          : [];
 
+    cachedRepos = finalRepos;
     renderProjects(finalRepos);
   } catch (err) {
     console.error('Falha ao carregar dados do GitHub:', err);
+    cachedRepos = null;
     renderProjectsError();
   }
-}
-
-function animateCount(selector, target) {
-  const el = $(selector);
-  if (!el) return;
-  let current = 0;
-  const step = Math.max(1, Math.ceil(target / 30));
-  const interval = setInterval(() => {
-    current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(interval);
-    }
-    el.textContent = current;
-  }, 40);
 }
 
 function renderProjects(repos) {
@@ -142,21 +273,19 @@ function renderProjects(repos) {
       <a href="${r.html_url}" target="_blank" rel="noopener" class="project-card">
         <div class="project-header">
           <div class="project-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l2-3h14l2 3M3 7h18"/>
             </svg>
             ${escapeHTML(r.name)}
           </div>
-          ${r.stargazers_count > 0
-            ? `<span class="project-stars">★ ${r.stargazers_count}</span>`
-            : ''}
+          ${r.stargazers_count > 0 ? `<span class="project-stars">★ ${r.stargazers_count}</span>` : ''}
         </div>
         <p class="project-description">
-          ${escapeHTML(r.description || 'Projeto desenvolvido com carinho ✨')}
+          ${escapeHTML(r.description || t('projects.fallback'))}
         </p>
         <div class="project-footer">
           <span class="project-language">
-            <span class="lang-dot" style="background:${LANGUAGE_COLORS[r.language] || '#888'}"></span>
+            <span class="lang-dot" style="background:${LANGUAGE_COLORS[r.language] || 'var(--accent)'}"></span>
             ${escapeHTML(r.language || 'Code')}
           </span>
           <span class="project-date">${formatDate(r.updated_at)}</span>
@@ -171,99 +300,19 @@ function renderProjectsError() {
   if (!grid) return;
   grid.innerHTML = `
     <div style="grid-column: 1/-1; text-align:center; padding: 3rem; color: var(--text-muted);">
-      <p>Não foi possível carregar os repositórios agora.</p>
+      <p>${escapeHTML(t('projects.error'))}</p>
       <p style="margin-top: 1rem;">
         <a href="https://github.com/${GITHUB_USER}" target="_blank" rel="noopener" class="btn btn-ghost">
-          Ver no GitHub
+          ${escapeHTML(t('projects.viewGithub'))}
         </a>
       </p>
     </div>`;
 }
 
-function escapeHTML(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
-/* ----------------------- Background canvas ------------------------------ */
-
-function initBackgroundCanvas() {
-  const canvas = $('#bg-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let particles = [];
-  let width, height;
-
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    initParticles();
-  }
-
-  function initParticles() {
-    const count = Math.min(80, Math.floor((width * height) / 20000));
-    particles = Array.from({ length: count }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      size: Math.random() * 1.8 + 0.5,
-      hue: Math.random() * 40 + 320, // pinks / magentas
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const lightness = isLight ? 42 : 70;
-    const alpha = isLight ? 0.45 : 0.7;
-
-    particles.forEach((p, i) => {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > width) p.vx *= -1;
-      if (p.y < 0 || p.y > height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${p.hue}, 80%, ${lightness}%, ${alpha})`;
-      ctx.fill();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x;
-        const dy = p.y - q.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 130) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `hsla(${p.hue}, 70%, ${lightness}%, ${0.14 * (1 - dist / 130)})`;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
-      }
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-}
-
 /* ------------------------- Reveal on scroll ----------------------------- */
 
 function initReveal() {
-  const els = $$('.section, .about-card, .project-card, .stack-item');
+  const els = $$('.section, .stack-item, .project-card, .hero-content, .hero-visual, .contact-panel');
   els.forEach((el) => el.classList.add('reveal'));
 
   const observer = new IntersectionObserver(
@@ -275,7 +324,7 @@ function initReveal() {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.1 }
   );
 
   els.forEach((el) => observer.observe(el));
@@ -314,11 +363,9 @@ function applyTheme(theme) {
   if (toggle) {
     toggle.setAttribute(
       'aria-label',
-      next === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'
+      next === 'dark' ? t('theme.light') : t('theme.dark')
     );
   }
-
-  window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
 }
 
 function initThemeToggle() {
@@ -330,7 +377,7 @@ function initThemeToggle() {
   toggle.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
     applyTheme(current === 'dark' ? 'light' : 'dark');
   });
 
@@ -353,7 +400,7 @@ function initMobileMenu() {
 
   function setOpen(open) {
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    toggle.setAttribute('aria-label', open ? t('nav.close') : t('nav.open'));
     nav.classList.toggle('is-open', open);
     overlay.classList.toggle('is-visible', open);
     overlay.hidden = !open;
@@ -387,11 +434,11 @@ function initMobileMenu() {
 /* ------------------------------- Init ----------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-  $('#year').textContent = new Date().getFullYear();
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
 
-  startTyping();
+  initLanguageToggle();
   loadGitHubData();
-  initBackgroundCanvas();
   initReveal();
   initThemeToggle();
   initMobileMenu();

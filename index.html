@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light" data-lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vitória Kelly — Dev Full Stack apaixonada por código e inovação." />
+  <meta name="description" data-i18n="meta.description" content="Vitória Kelly — Dev Full Stack com foco em APIs, microsserviços e aplicações web de ponta a ponta." />
   <meta name="author" content="Vitória Kelly" />
-  <title>Vitória Kelly · Dev Full Stack</title>
+  <title data-i18n="meta.title">Vitória Kelly · Dev Full Stack</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
-
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css?v=10" />
   <script>
     (function () {
       try {
-        var saved = localStorage.getItem('theme');
+        var savedTheme = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+
+        var savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en' || savedLang === 'pt') {
+          document.documentElement.setAttribute('data-lang', savedLang);
+          document.documentElement.lang = savedLang === 'en' ? 'en' : 'pt-BR';
+        }
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
   <header class="navbar">
-    <a href="#home" class="logo">
-      <span class="logo-emoji">⚡</span>
-      <span class="logo-text">vitoria<span class="accent">.dev</span></span>
-    </a>
-    <nav id="primary-nav" class="nav" aria-label="Navegação principal">
-      <a href="#about">Sobre</a>
-      <a href="#stack">Stack</a>
-      <a href="#projects">Projetos</a>
-      <a href="#contact">Contato</a>
+    <a href="#home" class="logo">vitória kelly</a>
+
+    <nav id="primary-nav" class="nav" data-i18n-aria="nav.aria" aria-label="Navegação principal">
+      <a href="#projects" data-i18n="nav.projects">projetos</a>
+      <a href="#about" data-i18n="nav.about">sobre</a>
+      <a href="#contact" data-i18n="nav.contact">contato</a>
+      <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/vitoria-leopoldo/" target="_blank" rel="noopener">linkedin</a>
     </nav>
+
     <div class="navbar-actions">
-      <button
-        class="theme-toggle"
-        id="theme-toggle"
-        type="button"
-        aria-label="Alternar tema"
-      >
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">
+        <span id="lang-toggle-label">EN</span>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" type="button" data-i18n-aria="theme.toggle" aria-label="Alternar tema">
         <span class="theme-icon theme-icon-moon" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 119.5 3a7 7 0 0011.5 11.5z"/></svg>
         </span>
@@ -59,6 +59,7 @@
         class="menu-toggle"
         id="menu-toggle"
         type="button"
+        data-i18n-aria="nav.open"
         aria-label="Abrir menu"
         aria-expanded="false"
         aria-controls="primary-nav"
@@ -74,247 +75,131 @@
   <main>
     <section id="home" class="hero">
       <div class="hero-content">
-        <span class="badge">
-          <span class="badge-dot"></span>
-          Disponível para novos projetos
-        </span>
+        <p class="hero-kicker" data-i18n="hero.kicker">Vitória Kelly · Dev Full Stack</p>
         <h1>
-          Olá, eu sou <span class="gradient-text">Vitória Kelly</span>
+          <span data-i18n="hero.title">desenvolvimento</span><br />
+          <span class="accent-word">Full Stack</span>
         </h1>
-        <p class="tagline">
-          <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+        <p class="hero-description" data-i18n="hero.description">
+          Desenvolvedora com foco em frontend, experiência em interfaces modernas
+          e aplicações web de ponta a ponta — com React, Vue, Next.js, .NET e Node.
         </p>
-        <p class="hero-description">
-          Desenvolvedora <strong>Full Stack</strong> apaixonada por resolver problemas com código —
-          construindo APIs, microsserviços e interfaces modernas com
-          <em>C#, React, Node e Vue</em>.
-        </p>
-        <div class="hero-actions">
-          <a href="assets/cv-vitoria-kelly.pdf" class="btn btn-primary" download="CV-Vitoria-Kelly.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-            Baixar CV
-          </a>
-          <a href="#projects" class="btn btn-ghost">
-            Ver projetos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener" class="btn btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.17a11.04 11.04 0 015.79 0c2.21-1.48 3.18-1.17 3.18-1.17.62 1.59.23 2.76.11 3.05.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-            GitHub
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value" id="stat-repos">—</span>
-            <span class="stat-label">Repositórios</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" id="stat-followers">—</span>
-            <span class="stat-label">Seguidores</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">∞</span>
-            <span class="stat-label">Linhas de código</span>
-          </div>
-        </div>
+        <a href="#projects" class="hero-cta">
+          <span data-i18n="hero.cta">conheça meus projetos</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <div class="hero-visual">
-        <div class="avatar-glow"></div>
-        <div class="avatar-card">
-          <div class="avatar-frame">
-            <img src="https://avatars.githubusercontent.com/u/112122558?v=4" alt="Avatar de Vitória Kelly" />
-            <div class="avatar-badge">⚡</div>
-          </div>
-          <div class="avatar-info">
-            <code class="terminal">
-              <span class="prompt">~/vitoria</span> <span class="cmd">$ whoami</span><br>
-              <span class="output">→ Full Stack Dev</span><br>
-              <span class="prompt">~/vitoria</span> <span class="cmd">$ ls skills/</span><br>
-              <span class="output">backend.cs  frontend.tsx  apis.js</span>
-            </code>
-          </div>
-        </div>
-        <div class="floating floating-1">⚡</div>
-        <div class="floating floating-2">&lt;/&gt;</div>
-        <div class="floating floating-3">{ }</div>
-        <div class="floating floating-4">🚀</div>
+        <div class="hero-blob" aria-hidden="true"></div>
+        <img
+          class="hero-portrait"
+          src="https://avatars.githubusercontent.com/u/112122558?v=4"
+          alt="Vitória Kelly"
+        />
+        <p class="hero-caption">Full Stack Developer</p>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section about-section">
       <div class="section-header">
-        <span class="section-tag">// sobre</span>
-        <h2>Inovação <span class="gradient-text">+</span> Tecnologia</h2>
+        <p class="section-label" data-i18n="about.label">sobre</p>
+        <h2>
+          <span data-i18n="about.title">Inovação e tecnologia</span><br />
+          <span class="accent-word" data-i18n="about.titleAccent">com propósito</span>
+        </h2>
       </div>
-      <div class="about-grid about-grid-2">
-        <article class="about-card">
-          <div class="about-icon">💡</div>
-          <h3>Inovação</h3>
-          <p>Estou sempre explorando novas tecnologias, padrões de arquitetura e formas criativas de transformar problemas complexos em soluções elegantes.</p>
-        </article>
-        <article class="about-card highlight">
-          <div class="about-icon">💻</div>
-          <h3>Tecnologia</h3>
-          <p>Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js, até interfaces ricas com React e Vue. Escrever código bem feito é o que me move.</p>
-        </article>
+      <div class="about-copy">
+        <p data-i18n="about.p1">
+          Estou sempre explorando novas tecnologias, padrões de arquitetura e formas criativas
+          de transformar problemas complexos em soluções elegantes.
+        </p>
+        <p data-i18n="about.p2">
+          Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js e NestJS,
+          até interfaces ricas com React, Vue e Next.js. Escrever código bem feito é o que me move.
+        </p>
+        <a href="assets/cv-vitoria-kelly.pdf" class="text-link" download="CV-Vitoria-Kelly.pdf">
+          <span data-i18n="about.cv">baixar CV</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        </a>
       </div>
     </section>
 
     <section id="stack" class="section">
       <div class="section-header">
-        <span class="section-tag">// stack</span>
-        <h2>Tecnologias que uso no <span class="gradient-text">dia a dia</span></h2>
+        <p class="section-label" data-i18n="stack.label">stack</p>
+        <h2>
+          <span data-i18n="stack.title">Tecnologias do</span>
+          <span class="accent-word" data-i18n="stack.titleAccent">dia a dia</span>
+        </h2>
       </div>
       <div class="stack-grid">
-        <div class="stack-item" data-tech="C#">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/csharp.svg')" aria-hidden="true"></span>
-          <span>C#</span>
-        </div>
-        <div class="stack-item" data-tech=".NET">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/dotnet.svg')" aria-hidden="true"></span>
-          <span>.NET</span>
-        </div>
-        <div class="stack-item" data-tech="React">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg')" aria-hidden="true"></span>
-          <span>React</span>
-        </div>
-        <div class="stack-item" data-tech="Vue">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/vuedotjs.svg')" aria-hidden="true"></span>
-          <span>Vue</span>
-        </div>
-        <div class="stack-item" data-tech="Node.js">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nodedotjs.svg')" aria-hidden="true"></span>
-          <span>Node.js</span>
-        </div>
-        <div class="stack-item" data-tech="NestJS">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nestjs.svg')" aria-hidden="true"></span>
-          <span>NestJS</span>
-        </div>
-        <div class="stack-item" data-tech="Next.js">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg')" aria-hidden="true"></span>
-          <span>Next.js</span>
-        </div>
-        <div class="stack-item" data-tech="Swift">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/swift.svg')" aria-hidden="true"></span>
-          <span>Swift</span>
-        </div>
-        <div class="stack-item" data-tech="JavaScript">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/javascript.svg')" aria-hidden="true"></span>
-          <span>JavaScript</span>
-        </div>
-        <div class="stack-item" data-tech="TypeScript">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/typescript.svg')" aria-hidden="true"></span>
-          <span>TypeScript</span>
-        </div>
-        <div class="stack-item" data-tech="HTML">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/html5.svg')" aria-hidden="true"></span>
-          <span>HTML</span>
-        </div>
-        <div class="stack-item" data-tech="CSS">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/css.svg')" aria-hidden="true"></span>
-          <span>CSS</span>
-        </div>
-        <div class="stack-item" data-tech="Sass">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/sass.svg')" aria-hidden="true"></span>
-          <span>Sass</span>
-        </div>
-        <div class="stack-item" data-tech="APIs">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/openapiinitiative.svg')" aria-hidden="true"></span>
-          <span>APIs REST</span>
-        </div>
-        <div class="stack-item" data-tech="Microservices">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/kubernetes.svg')" aria-hidden="true"></span>
-          <span>Microsserviços</span>
-        </div>
-        <div class="stack-item" data-tech="Python">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/python.svg')" aria-hidden="true"></span>
-          <span>Python</span>
-        </div>
-        <div class="stack-item" data-tech="Java">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/openjdk.svg')" aria-hidden="true"></span>
-          <span>Java</span>
-        </div>
-        <div class="stack-item" data-tech="Dart">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/dart.svg')" aria-hidden="true"></span>
-          <span>Dart</span>
-        </div>
-        <div class="stack-item" data-tech="Flutter">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/flutter.svg')" aria-hidden="true"></span>
-          <span>Flutter</span>
-        </div>
-        <div class="stack-item" data-tech="Git">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/git.svg')" aria-hidden="true"></span>
-          <span>Git</span>
-        </div>
-        <div class="stack-item" data-tech="Docker">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/docker.svg')" aria-hidden="true"></span>
-          <span>Docker</span>
-        </div>
-        <div class="stack-item" data-tech="SQL">
-          <span class="stack-icon" style="--icon: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/mysql.svg')" aria-hidden="true"></span>
-          <span>SQL</span>
-        </div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/csharp.svg')" aria-hidden="true"></span><span>C#</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/dotnet.svg')" aria-hidden="true"></span><span>.NET</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg')" aria-hidden="true"></span><span>React</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/vuedotjs.svg')" aria-hidden="true"></span><span>Vue</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nodedotjs.svg')" aria-hidden="true"></span><span>Node.js</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nestjs.svg')" aria-hidden="true"></span><span>NestJS</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg')" aria-hidden="true"></span><span>Next.js</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/swift.svg')" aria-hidden="true"></span><span>Swift</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/javascript.svg')" aria-hidden="true"></span><span>JavaScript</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/typescript.svg')" aria-hidden="true"></span><span>TypeScript</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/python.svg')" aria-hidden="true"></span><span>Python</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/dart.svg')" aria-hidden="true"></span><span>Dart</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/flutter.svg')" aria-hidden="true"></span><span>Flutter</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/docker.svg')" aria-hidden="true"></span><span>Docker</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/git.svg')" aria-hidden="true"></span><span>Git</span></div>
+        <div class="stack-item"><span class="stack-icon" style="--icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons/icons/mysql.svg')" aria-hidden="true"></span><span>SQL</span></div>
       </div>
     </section>
 
     <section id="projects" class="section">
       <div class="section-header">
-        <span class="section-tag">// projetos</span>
-        <h2>Trabalhos em <span class="gradient-text">destaque</span></h2>
-        <p class="section-subtitle">Projetos puxados diretamente do meu GitHub em tempo real.</p>
+        <p class="section-label" data-i18n="projects.label">projetos</p>
+        <h2>
+          <span data-i18n="projects.title">Trabalhos em</span>
+          <span class="accent-word" data-i18n="projects.titleAccent">destaque</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Seleção puxada do meu GitHub em tempo real.</p>
       </div>
       <div class="projects-grid" id="projects-grid">
         <div class="project-skeleton"></div>
         <div class="project-skeleton"></div>
         <div class="project-skeleton"></div>
         <div class="project-skeleton"></div>
-        <div class="project-skeleton"></div>
-        <div class="project-skeleton"></div>
       </div>
       <div class="see-more">
-        <a href="https://github.com/vitoriakelly?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">
-          Ver todos os repositórios
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="https://github.com/vitoriakelly?tab=repositories" target="_blank" rel="noopener" class="text-link">
+          <span data-i18n="projects.seeMore">ver todos os repositórios</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
     </section>
 
     <section id="contact" class="section contact-section">
-      <div class="contact-card">
-        <div class="contact-emoji">👩‍💻</div>
-        <h2>Vamos construir algo <span class="gradient-text">juntos</span>?</h2>
-        <p>Tem um projeto, ideia ou só quer trocar uma ideia sobre código? Me chama por qualquer canal:</p>
+      <div class="contact-panel">
+        <p class="section-label" data-i18n="contact.label">contato</p>
+        <h2>
+          <span data-i18n="contact.title">Vamos construir algo</span>
+          <span class="accent-word" data-i18n="contact.titleAccent">juntos</span><span data-i18n="contact.titleEnd">?</span>
+        </h2>
+        <p data-i18n="contact.subtitle">Tem um projeto, ideia ou oportunidade? Me chama.</p>
         <div class="contact-links">
-          <a href="assets/cv-vitoria-kelly.pdf" class="btn btn-primary" download="CV-Vitoria-Kelly.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-            Baixar CV
-          </a>
-          <a href="https://www.linkedin.com/in/vitoria-leopoldo/" target="_blank" rel="noopener" class="btn btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0z"/></svg>
-            LinkedIn
-          </a>
-          <a href="mailto:vitoria3kelly7@gmail.com" class="btn btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
-            E-mail
-          </a>
-          <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener" class="btn btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.17a11.04 11.04 0 015.79 0c2.21-1.48 3.18-1.17 3.18-1.17.62 1.59.23 2.76.11 3.05.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-            GitHub
-          </a>
+          <a href="assets/cv-vitoria-kelly.pdf" class="btn btn-primary" download="CV-Vitoria-Kelly.pdf" data-i18n="contact.cv">Baixar CV</a>
+          <a href="https://www.linkedin.com/in/vitoria-leopoldo/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+          <a href="mailto:vitoria3kelly7@gmail.com" class="btn btn-ghost" data-i18n="contact.email">E-mail</a>
+          <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
         </div>
-        <p class="contact-details">
-          <a href="mailto:vitoria3kelly7@gmail.com">vitoria3kelly7@gmail.com</a>
-        </p>
+        <a class="contact-mail" href="mailto:vitoria3kelly7@gmail.com">vitoria3kelly7@gmail.com</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Feito com <span class="heart">♥</span> e muito café ☕ por <strong>Vitória Kelly</strong></p>
-    <p class="footer-sub">© <span id="year"></span> · Inovação e tecnologia.</p>
+    <p>© <span id="year"></span> Vitória Kelly</p>
+    <p class="footer-sub" data-i18n="footer.tagline">Inovação · Tecnologia · Código com propósito</p>
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
