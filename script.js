@@ -50,7 +50,7 @@ const I18N = {
     'hero.kicker': 'Vitória Kelly · Dev Full Stack',
     'hero.title': 'desenvolvimento',
     'hero.description':
-      'Desenvolvedora com foco em frontend, experiência em interfaces modernas e aplicações web de ponta a ponta — com React, Vue, Next.js, .NET e Node.',
+      'Desenvolvedora Full Stack com foco em frontend, experiência em interfaces modernas, APIs e aplicações web de ponta a ponta — com React, Vue, Next.js, .NET e Node.',
     'hero.cta': 'conheça meus projetos',
     'about.label': 'sobre',
     'about.title': 'Inovação e tecnologia',
@@ -98,7 +98,7 @@ const I18N = {
     'hero.kicker': 'Vitória Kelly · Full Stack Dev',
     'hero.title': 'development',
     'hero.description':
-      'Developer focused on frontend, with experience in modern interfaces and end-to-end web applications — with React, Vue, Next.js, .NET, and Node.',
+      'Full Stack developer focused on frontend, with experience in modern interfaces, APIs, and end-to-end web applications — with React, Vue, Next.js, .NET, and Node.',
     'hero.cta': 'see my projects',
     'about.label': 'about',
     'about.title': 'Innovation and technology',
