@@ -2,7 +2,7 @@
 
 # Olá! Eu sou a Vitória Kelly 👋
 
-### Dev Full Stack · Inovação · Tecnologia
+### Dev Full Stack · foco em Frontend · Inovação · Tecnologia
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitoria-leopoldo/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vitoriakelly)
@@ -15,26 +15,18 @@
 
 ## 👩‍💻 Sobre mim
 
-Apaixonada por **resolver problemas com código**. Atuo no full stack construindo APIs, microsserviços e interfaces modernas — do backend em **.NET / Node** ao frontend com **React, Vue e Next.js**.
+**Full Stack** com foco em **frontend**: interfaces modernas, experiência do usuário e aplicações web de ponta a ponta — também com APIs e backend em **.NET / Node**.
 
 - 🔭 Sempre explorando novas tecnologias e arquiteturas
 - 💡 Gosto de transformar problemas complexos em soluções elegantes
-- 🌱 Evoluindo continuamente em microsserviços, APIs e aplicações modernas
+- 🌱 Evoluindo em React, Vue, Next.js, APIs e apps full stack
 - ⚡ Disponível para novos projetos e oportunidades
+
+🌐 **Portfólio:** [vitoriakelly.vercel.app](https://vitoriakelly.vercel.app/)
 
 ---
 
 ## 🛠️ Tecnologias
-
-### Backend
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![APIs REST](https://img.shields.io/badge/APIs%20REST-009688?style=flat-square&logo=openapiinitiative&logoColor=white)
-![Microsserviços](https://img.shields.io/badge/Microsserviços-2496ED?style=flat-square&logo=docker&logoColor=white)
 
 ### Frontend
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -45,6 +37,14 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
+
+### Backend
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![APIs REST](https://img.shields.io/badge/APIs%20REST-009688?style=flat-square&logo=openapiinitiative&logoColor=white)
 
 ### Mobile & ferramentas
 ![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
@@ -60,7 +60,7 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 
 <div align="center">
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vitoriakelly&bg_color=050505&color=ff4da6&line=ff2d87&point=ff8ac4&area=true&hide_border=true&area_color=ff2d87)](https://github.com/vitoriakelly)
+[![GitHub Streak](https://streak-stats.demolab.com?user=vitoriakelly&theme=pinkheart&hide_border=true&background=050505&ring=ff2d87&fire=ff4da6&currStreakLabel=ff8ac4)](https://github.com/vitoriakelly)
 
 <br/>
 
@@ -75,7 +75,7 @@ Apaixonada por **resolver problemas com código**. Atuo no full stack construind
 
 ## 🚀 Destaques
 
-Projetos que mais representam meu trabalho — full stack, mobile e APIs.
+Projetos que mais representam meu trabalho — frontend, full stack, mobile e APIs.
 
 <br/>
 
@@ -134,14 +134,6 @@ Projetos que mais representam meu trabalho — full stack, mobile e APIs.
   </tr>
 </table>
 
-<br/>
-
-<div align="center">
-
-🌐 **Portfólio completo:** [vitoriakelly.vercel.app](https://vitoriakelly.vercel.app/)
-
-</div>
-
 ---
 
 ## 📬 Contato
@@ -152,6 +144,7 @@ Quer trocar uma ideia, falar sobre um projeto ou oportunidade? Me chama!
 - 📧 [vitoria3kelly7@gmail.com](mailto:vitoria3kelly7@gmail.com)
 - 🐱 [GitHub](https://github.com/vitoriakelly)
 - 📄 [Baixar CV](./assets/cv-vitoria-kelly.pdf)
+- 🌐 [Portfólio](https://vitoriakelly.vercel.app/)
 
 ---
 
