@@ -39,6 +39,7 @@ const I18N = {
     'nav.aria': 'Navegação principal',
     'nav.projects': 'projetos',
     'nav.about': 'sobre',
+    'nav.resume': 'currículo',
     'nav.contact': 'contato',
     'nav.open': 'Abrir menu',
     'nav.close': 'Fechar menu',
@@ -59,7 +60,76 @@ const I18N = {
       'Estou sempre explorando novas tecnologias, padrões de arquitetura e formas criativas de transformar problemas complexos em soluções elegantes.',
     'about.p2':
       'Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js e NestJS, até interfaces ricas com React, Vue e Next.js. Escrever código bem feito é o que me move.',
-    'about.cv': 'baixar CV',
+    'about.resumeLink': 'ver currículo',
+    'resume.label': 'currículo',
+    'resume.title': 'Experiência',
+    'resume.titleAccent': 'profissional',
+    'resume.subtitle': 'Trajetória em desenvolvimento, integrações e suporte técnico.',
+    'resume.download': 'Baixar CV (PDF)',
+    'resume.current': 'Atual',
+    'resume.more': 'Mais detalhes',
+    'resume.less': 'Menos detalhes',
+    'resume.responsibilities': 'Responsabilidades',
+    'resume.stack': 'Stack',
+    'resume.job1.role': 'Analista e Desenvolvedora Full Stack Júnior',
+    'resume.job1.period': 'set 2025 – Atual',
+    'resume.job1.summary':
+      'Desenvolvimento full stack com foco em aplicações web modernas, atuando no frontend e no backend.',
+    'resume.job1.r1': 'Desenvolver aplicações web modernas full stack, com atuação em frontend e backend.',
+    'resume.job1.r2': 'Aplicar boas práticas de desenvolvimento, Clean Code e melhoria contínua da qualidade do código.',
+    'resume.job1.r3': 'Integrar APIs REST e contribuir com arquitetura de software e soluções escaláveis.',
+    'resume.job1.r4': 'Atuar em times ágeis com Git, Jira e colaboração próxima com equipe e stakeholders.',
+    'resume.job2.role': 'Analista de Suporte N2',
+    'resume.job2.period': 'abr 2025 – ago 2025',
+    'resume.job2.summary':
+      'Atendimento e resolução de incidentes com foco em análise técnica, diagnóstico e solução de problemas.',
+    'resume.job2.r1': 'Atender e resolver incidentes e requisições com análise técnica e diagnóstico.',
+    'resume.job2.r2': 'Investigar causa raiz, aplicar correções e garantir cumprimento de SLAs.',
+    'resume.job2.r3': 'Manter qualidade no atendimento e documentação das soluções aplicadas.',
+    'resume.job3.role': 'Analista Desenvolvedora de Software',
+    'resume.job3.period': 'jul 2024 – mar 2025',
+    'resume.job3.summary':
+      'Desenvolvimento full stack de aplicações web escaláveis com React, Material UI e Node.js.',
+    'resume.job3.r1': 'Desenvolver aplicações web escaláveis com React, Material UI e Node.js.',
+    'resume.job3.r2': 'Trabalhar com arquitetura de microsserviços, PostgreSQL, Docker e mensageria com RabbitMQ.',
+    'resume.job3.r3': 'Integrar APIs e serviços externos, incluindo automações e comunicação via WhatsApp (Baileys).',
+    'resume.job3.r4': 'Atuar com Scrum, GitFlow, testes e foco em qualidade e melhoria contínua.',
+    'resume.job4.role': 'Analista de Integração',
+    'resume.job4.period': 'dez 2023 – jun 2024',
+    'resume.job4.summary':
+      'Integração de sistemas financeiros, garantindo comunicação eficiente entre aplicações e processos.',
+    'resume.job4.r1': 'Integrar sistemas, garantindo comunicação eficiente entre aplicações e processos.',
+    'resume.job4.r2': 'Monitorar fluxos integrados, assegurando estabilidade e resolução de falhas.',
+    'resume.job5.role': 'Analista de Integração',
+    'resume.job5.period': 'dez 2023 – jun 2024',
+    'resume.job5.summary':
+      'Conexão e integração de sistemas, com monitoramento contínuo dos fluxos e resolução de falhas.',
+    'resume.job5.r1': 'Conectar e integrar sistemas, assegurando comunicação eficiente entre aplicações.',
+    'resume.job5.r2': 'Monitorar fluxos integrados e resolver falhas para manter o funcionamento estável.',
+    'resume.freelanceLabel': 'projetos freelance',
+    'resume.freelanceTitle': 'Freelance',
+    'resume.freelanceSubtitle':
+      'Trabalhos pontuais em paralelo à experiência principal — não são trocas de emprego.',
+    'resume.freelanceBadge': 'Freelance · Remoto',
+    'resume.freelance1.role': 'Desenvolvedora Full Stack',
+    'resume.freelance1.period': 'mar 2025 – ago 2025',
+    'resume.freelance1.summary':
+      'Projeto freelance em Whaticket: correções da API Oficial, ajustes e novas funções no FlowBuilder.',
+    'resume.freelance1.r1':
+      'Atuar como full stack em demandas do Whaticket, com correções e estabilização da API Oficial.',
+    'resume.freelance1.r2':
+      'Ajustar o FlowBuilder para funcionar corretamente com a API Oficial do WhatsApp.',
+    'resume.freelance1.r3':
+      'Adicionar novas funções ao FlowBuilder, ampliando os fluxos e recursos disponíveis no produto.',
+    'resume.eduLabel': 'formação',
+    'resume.eduTitle': 'Educação',
+    'resume.edu1.school': 'Universidade Federal do Ceará (UFC)',
+    'resume.edu1.course': 'Sistemas de Informação',
+    'resume.edu1.period': '2021 – Atual',
+    'resume.edu2.school': 'IFRS',
+    'resume.edu2.course': 'Automação de Sistemas',
+    'resume.edu3.school': 'EEEP Maria Altair Américo Saboia',
+    'resume.edu3.course': 'Redes de Computadores',
     'stack.label': 'stack',
     'stack.title': 'Tecnologias do',
     'stack.titleAccent': 'dia a dia',
@@ -87,6 +157,7 @@ const I18N = {
     'nav.aria': 'Main navigation',
     'nav.projects': 'projects',
     'nav.about': 'about',
+    'nav.resume': 'resume',
     'nav.contact': 'contact',
     'nav.open': 'Open menu',
     'nav.close': 'Close menu',
@@ -107,7 +178,76 @@ const I18N = {
       'I am always exploring new technologies, architecture patterns, and creative ways to turn complex problems into elegant solutions.',
     'about.p2':
       'I work across the full stack — from .NET APIs and microservices, through Node.js and NestJS, to rich interfaces with React, Vue, and Next.js. Writing well-crafted code is what drives me.',
-    'about.cv': 'download CV',
+    'about.resumeLink': 'view resume',
+    'resume.label': 'resume',
+    'resume.title': 'Professional',
+    'resume.titleAccent': 'experience',
+    'resume.subtitle': 'Path across development, integrations, and technical support.',
+    'resume.download': 'Download CV (PDF)',
+    'resume.current': 'Current',
+    'resume.more': 'More details',
+    'resume.less': 'Less details',
+    'resume.responsibilities': 'Responsibilities',
+    'resume.stack': 'Stack',
+    'resume.job1.role': 'Junior Full Stack Software Analyst & Developer',
+    'resume.job1.period': 'Sep 2025 – Present',
+    'resume.job1.summary':
+      'Full stack development focused on modern web applications, working across frontend and backend.',
+    'resume.job1.r1': 'Build modern full stack web applications across frontend and backend.',
+    'resume.job1.r2': 'Apply clean code practices and continuously improve code quality.',
+    'resume.job1.r3': 'Integrate REST APIs and contribute to software architecture and scalable solutions.',
+    'resume.job1.r4': 'Work in agile teams with Git, Jira, and close collaboration with stakeholders.',
+    'resume.job2.role': 'N2 Support Analyst',
+    'resume.job2.period': 'Apr 2025 – Aug 2025',
+    'resume.job2.summary':
+      'Incident handling and troubleshooting with a focus on technical analysis and problem solving.',
+    'resume.job2.r1': 'Handle and resolve incidents and requests with technical analysis and diagnosis.',
+    'resume.job2.r2': 'Investigate root causes, apply fixes, and ensure SLA compliance.',
+    'resume.job2.r3': 'Keep high-quality support and document applied solutions.',
+    'resume.job3.role': 'Software Developer Analyst',
+    'resume.job3.period': 'Jul 2024 – Mar 2025',
+    'resume.job3.summary':
+      'Full stack development of scalable web applications with React, Material UI, and Node.js.',
+    'resume.job3.r1': 'Build scalable web apps with React, Material UI, and Node.js.',
+    'resume.job3.r2': 'Work with microservices architecture, PostgreSQL, Docker, and RabbitMQ messaging.',
+    'resume.job3.r3': 'Integrate APIs and external services, including WhatsApp automation (Baileys).',
+    'resume.job3.r4': 'Work with Scrum, GitFlow, testing, and continuous improvement.',
+    'resume.job4.role': 'Integration Analyst',
+    'resume.job4.period': 'Dec 2023 – Jun 2024',
+    'resume.job4.summary':
+      'System integration for financial products, ensuring reliable communication across applications.',
+    'resume.job4.r1': 'Integrate systems and keep efficient communication between applications and processes.',
+    'resume.job4.r2': 'Monitor integrated flows, ensure stability, and resolve failures.',
+    'resume.job5.role': 'Integration Analyst',
+    'resume.job5.period': 'Dec 2023 – Jun 2024',
+    'resume.job5.summary':
+      'System connection and integration with continuous monitoring and failure resolution.',
+    'resume.job5.r1': 'Connect and integrate systems with efficient application communication.',
+    'resume.job5.r2': 'Monitor integrated flows and resolve failures to keep stable operation.',
+    'resume.freelanceLabel': 'freelance projects',
+    'resume.freelanceTitle': 'Freelance',
+    'resume.freelanceSubtitle':
+      'Side projects in parallel with the main experience — not job switches.',
+    'resume.freelanceBadge': 'Freelance · Remote',
+    'resume.freelance1.role': 'Full Stack Developer',
+    'resume.freelance1.period': 'Mar 2025 – Aug 2025',
+    'resume.freelance1.summary':
+      'Freelance project on Whaticket: Official API fixes, FlowBuilder adjustments, and new features.',
+    'resume.freelance1.r1':
+      'Work as full stack on Whaticket demands, fixing and stabilizing the Official API.',
+    'resume.freelance1.r2':
+      'Adjust FlowBuilder so it works correctly with the WhatsApp Official API.',
+    'resume.freelance1.r3':
+      'Add new FlowBuilder features, expanding available flows and product capabilities.',
+    'resume.eduLabel': 'education',
+    'resume.eduTitle': 'Education',
+    'resume.edu1.school': 'Federal University of Ceará (UFC)',
+    'resume.edu1.course': 'Information Systems',
+    'resume.edu1.period': '2021 – Present',
+    'resume.edu2.school': 'IFRS',
+    'resume.edu2.course': 'Systems Automation',
+    'resume.edu3.school': 'EEEP Maria Altair Américo Saboia',
+    'resume.edu3.course': 'Computer Networks',
     'stack.label': 'stack',
     'stack.title': 'Everyday',
     'stack.titleAccent': 'technologies',
@@ -213,6 +353,7 @@ function applyLang(lang) {
   } catch (_) {}
 
   applyTranslations();
+  syncResumeToggleLabels();
 }
 
 function initLanguageToggle() {
@@ -389,6 +530,29 @@ function initThemeToggle() {
   });
 }
 
+/* ------------------------- Resume accordion ----------------------------- */
+
+function initResumeToggles() {
+  $$('.resume-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const details = btn.nextElementSibling;
+      if (!details || !details.classList.contains('resume-details')) return;
+
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      details.hidden = open;
+      btn.textContent = open ? t('resume.more') : t('resume.less');
+    });
+  });
+}
+
+function syncResumeToggleLabels() {
+  $$('.resume-toggle').forEach((btn) => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.textContent = open ? t('resume.less') : t('resume.more');
+  });
+}
+
 /* --------------------------- Mobile menu -------------------------------- */
 
 function initMobileMenu() {
@@ -442,4 +606,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initThemeToggle();
   initMobileMenu();
+  initResumeToggles();
 });

@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <script>
     (function () {
       try {
@@ -38,6 +38,7 @@
     <nav id="primary-nav" class="nav" data-i18n-aria="nav.aria" aria-label="Navegação principal">
       <a href="#projects" data-i18n="nav.projects">projetos</a>
       <a href="#about" data-i18n="nav.about">sobre</a>
+      <a href="#resume" data-i18n="nav.resume">currículo</a>
       <a href="#contact" data-i18n="nav.contact">contato</a>
       <a href="https://github.com/vitoriakelly" target="_blank" rel="noopener">github</a>
       <a href="https://www.linkedin.com/in/vitoria-leopoldo/" target="_blank" rel="noopener">linkedin</a>
@@ -118,10 +119,211 @@
           Atuo no full stack desde APIs em .NET e microsserviços, passando por Node.js e NestJS,
           até interfaces ricas com React, Vue e Next.js. Escrever código bem feito é o que me move.
         </p>
-        <a href="assets/cv-vitoria-kelly.pdf" class="text-link" download="CV-Vitoria-Kelly.pdf">
-          <span data-i18n="about.cv">baixar CV</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        <a href="#resume" class="text-link">
+          <span data-i18n="about.resumeLink">ver currículo</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume-section">
+      <div class="section-header resume-header">
+        <div>
+          <p class="section-label" data-i18n="resume.label">currículo</p>
+          <h2>
+            <span data-i18n="resume.title">Experiência</span>
+            <span class="accent-word" data-i18n="resume.titleAccent">profissional</span>
+          </h2>
+          <p class="section-subtitle" data-i18n="resume.subtitle">Trajetória em desenvolvimento, integrações e suporte técnico.</p>
+        </div>
+        <div class="resume-actions">
+          <a href="assets/cv-vitoria-kelly.pdf" class="btn btn-primary" download="CV-Vitoria-Kelly.pdf" data-i18n="resume.download">Baixar CV (PDF)</a>
+          <a href="https://www.linkedin.com/in/vitoria-leopoldo/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="resume-list">
+        <article class="resume-job">
+          <div class="resume-job-mark" aria-hidden="true">A</div>
+          <div class="resume-job-body">
+            <div class="resume-job-top">
+              <h3>Argo Grupo</h3>
+              <span class="resume-badge" data-i18n="resume.current">Atual</span>
+            </div>
+            <p class="resume-role" data-i18n="resume.job1.role">Analista e Desenvolvedora Full Stack Júnior</p>
+            <p class="resume-period" data-i18n="resume.job1.period">set 2025 – Atual</p>
+            <p class="resume-summary" data-i18n="resume.job1.summary">Desenvolvimento full stack com foco em aplicações web modernas, atuando no frontend e no backend.</p>
+            <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+            <div class="resume-details" hidden>
+              <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+              <ul>
+                <li data-i18n="resume.job1.r1">Desenvolver aplicações web modernas full stack, com atuação em frontend e backend.</li>
+                <li data-i18n="resume.job1.r2">Aplicar boas práticas de desenvolvimento, Clean Code e melhoria contínua da qualidade do código.</li>
+                <li data-i18n="resume.job1.r3">Integrar APIs REST e contribuir com arquitetura de software e soluções escaláveis.</li>
+                <li data-i18n="resume.job1.r4">Atuar em times ágeis com Git, Jira e colaboração próxima com equipe e stakeholders.</li>
+              </ul>
+              <h4 data-i18n="resume.stack">Stack</h4>
+              <div class="resume-tags">
+                <span>React</span><span>Vue</span><span>Next.js</span><span>.NET</span><span>Node.js</span><span>APIs REST</span><span>Git</span><span>Jira</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="resume-job">
+          <div class="resume-job-mark" aria-hidden="true">J</div>
+          <div class="resume-job-body">
+            <div class="resume-job-top">
+              <h3>JN Moura Soluções Tecnológicas</h3>
+            </div>
+            <p class="resume-role" data-i18n="resume.job2.role">Analista de Suporte N2</p>
+            <p class="resume-period" data-i18n="resume.job2.period">abr 2025 – ago 2025</p>
+            <p class="resume-summary" data-i18n="resume.job2.summary">Atendimento e resolução de incidentes com foco em análise técnica, diagnóstico e solução de problemas.</p>
+            <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+            <div class="resume-details" hidden>
+              <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+              <ul>
+                <li data-i18n="resume.job2.r1">Atender e resolver incidentes e requisições com análise técnica e diagnóstico.</li>
+                <li data-i18n="resume.job2.r2">Investigar causa raiz, aplicar correções e garantir cumprimento de SLAs.</li>
+                <li data-i18n="resume.job2.r3">Manter qualidade no atendimento e documentação das soluções aplicadas.</li>
+              </ul>
+              <h4 data-i18n="resume.stack">Stack</h4>
+              <div class="resume-tags">
+                <span>Suporte N2</span><span>SLA</span><span>Diagnóstico</span><span>Incidentes</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="resume-job">
+          <div class="resume-job-mark" aria-hidden="true">A</div>
+          <div class="resume-job-body">
+            <div class="resume-job-top">
+              <h3>Ativo Digital e Tecnologia</h3>
+            </div>
+            <p class="resume-role" data-i18n="resume.job3.role">Analista Desenvolvedora de Software</p>
+            <p class="resume-period" data-i18n="resume.job3.period">jul 2024 – mar 2025</p>
+            <p class="resume-summary" data-i18n="resume.job3.summary">Desenvolvimento full stack de aplicações web escaláveis com React, Material UI e Node.js.</p>
+            <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+            <div class="resume-details" hidden>
+              <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+              <ul>
+                <li data-i18n="resume.job3.r1">Desenvolver aplicações web escaláveis com React, Material UI e Node.js.</li>
+                <li data-i18n="resume.job3.r2">Trabalhar com arquitetura de microsserviços, PostgreSQL, Docker e mensageria com RabbitMQ.</li>
+                <li data-i18n="resume.job3.r3">Integrar APIs e serviços externos, incluindo automações e comunicação via WhatsApp (Baileys).</li>
+                <li data-i18n="resume.job3.r4">Atuar com Scrum, GitFlow, testes e foco em qualidade e melhoria contínua.</li>
+              </ul>
+              <h4 data-i18n="resume.stack">Stack</h4>
+              <div class="resume-tags">
+                <span>React</span><span>Material UI</span><span>Node.js</span><span>PostgreSQL</span><span>Docker</span><span>RabbitMQ</span><span>Microsserviços</span><span>Scrum</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="resume-job">
+          <div class="resume-job-mark" aria-hidden="true">F</div>
+          <div class="resume-job-body">
+            <div class="resume-job-top">
+              <h3>FitBank</h3>
+            </div>
+            <p class="resume-role" data-i18n="resume.job4.role">Analista de Integração</p>
+            <p class="resume-period" data-i18n="resume.job4.period">dez 2023 – jun 2024</p>
+            <p class="resume-summary" data-i18n="resume.job4.summary">Integração de sistemas financeiros, garantindo comunicação eficiente entre aplicações e processos.</p>
+            <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+            <div class="resume-details" hidden>
+              <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+              <ul>
+                <li data-i18n="resume.job4.r1">Integrar sistemas, garantindo comunicação eficiente entre aplicações e processos.</li>
+                <li data-i18n="resume.job4.r2">Monitorar fluxos integrados, assegurando estabilidade e resolução de falhas.</li>
+              </ul>
+              <h4 data-i18n="resume.stack">Stack</h4>
+              <div class="resume-tags">
+                <span>Integrações</span><span>APIs</span><span>Sistemas financeiros</span><span>Monitoramento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="resume-job">
+          <div class="resume-job-mark" aria-hidden="true">E</div>
+          <div class="resume-job-body">
+            <div class="resume-job-top">
+              <h3>EasyCrédito</h3>
+            </div>
+            <p class="resume-role" data-i18n="resume.job5.role">Analista de Integração</p>
+            <p class="resume-period" data-i18n="resume.job5.period">dez 2023 – jun 2024</p>
+            <p class="resume-summary" data-i18n="resume.job5.summary">Conexão e integração de sistemas, com monitoramento contínuo dos fluxos e resolução de falhas.</p>
+            <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+            <div class="resume-details" hidden>
+              <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+              <ul>
+                <li data-i18n="resume.job5.r1">Conectar e integrar sistemas, assegurando comunicação eficiente entre aplicações.</li>
+                <li data-i18n="resume.job5.r2">Monitorar fluxos integrados e resolver falhas para manter o funcionamento estável.</li>
+              </ul>
+              <h4 data-i18n="resume.stack">Stack</h4>
+              <div class="resume-tags">
+                <span>Integrações</span><span>APIs</span><span>Monitoramento</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="resume-freelance">
+        <p class="section-label" data-i18n="resume.freelanceLabel">projetos freelance</p>
+        <h3 data-i18n="resume.freelanceTitle">Freelance</h3>
+        <p class="section-subtitle" data-i18n="resume.freelanceSubtitle">Trabalhos pontuais em paralelo à experiência principal — não são trocas de emprego.</p>
+
+        <div class="resume-list">
+          <article class="resume-job">
+            <div class="resume-job-mark" aria-hidden="true">U</div>
+            <div class="resume-job-body">
+              <div class="resume-job-top">
+                <h3>UltraWhats</h3>
+                <span class="resume-badge" data-i18n="resume.freelanceBadge">Freelance · Remoto</span>
+              </div>
+              <p class="resume-role" data-i18n="resume.freelance1.role">Desenvolvedora Full Stack</p>
+              <p class="resume-period" data-i18n="resume.freelance1.period">mar 2025 – ago 2025</p>
+              <p class="resume-summary" data-i18n="resume.freelance1.summary">Projeto freelance em Whaticket: correções da API Oficial, ajustes e novas funções no FlowBuilder.</p>
+              <button class="resume-toggle" type="button" aria-expanded="false" data-i18n="resume.more">Mais detalhes</button>
+              <div class="resume-details" hidden>
+                <h4 data-i18n="resume.responsibilities">Responsabilidades</h4>
+                <ul>
+                  <li data-i18n="resume.freelance1.r1">Atuar como full stack em demandas do Whaticket, com correções e estabilização da API Oficial.</li>
+                  <li data-i18n="resume.freelance1.r2">Ajustar o FlowBuilder para funcionar corretamente com a API Oficial do WhatsApp.</li>
+                  <li data-i18n="resume.freelance1.r3">Adicionar novas funções ao FlowBuilder, ampliando os fluxos e recursos disponíveis no produto.</li>
+                </ul>
+                <h4 data-i18n="resume.stack">Stack</h4>
+                <div class="resume-tags">
+                  <span>Whaticket</span><span>WhatsApp API Oficial</span><span>FlowBuilder</span><span>Full Stack</span><span>APIs</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="resume-education">
+        <p class="section-label" data-i18n="resume.eduLabel">formação</p>
+        <h3 data-i18n="resume.eduTitle">Educação</h3>
+        <div class="edu-list">
+          <article class="edu-item">
+            <h4 data-i18n="resume.edu1.school">Universidade Federal do Ceará (UFC)</h4>
+            <p class="resume-role" data-i18n="resume.edu1.course">Sistemas de Informação</p>
+            <p class="resume-period" data-i18n="resume.edu1.period">2021 – Atual</p>
+          </article>
+          <article class="edu-item">
+            <h4 data-i18n="resume.edu2.school">IFRS</h4>
+            <p class="resume-role" data-i18n="resume.edu2.course">Automação de Sistemas</p>
+            <p class="resume-period">2021</p>
+          </article>
+          <article class="edu-item">
+            <h4 data-i18n="resume.edu3.school">EEEP Maria Altair Américo Saboia</h4>
+            <p class="resume-role" data-i18n="resume.edu3.course">Redes de Computadores</p>
+            <p class="resume-period">2018 – 2020</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -200,6 +402,6 @@
     <p class="footer-sub" data-i18n="footer.tagline">Inovação · Tecnologia · Código com propósito</p>
   </footer>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
